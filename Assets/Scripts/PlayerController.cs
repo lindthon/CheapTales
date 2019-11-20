@@ -81,7 +81,8 @@ public class PlayerController : MonoBehaviour
             //Moving
             state = State.running;
 
-        }else if(Input.GetKey(KeyCode.DownArrow)){
+        }else if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        {
             state = State.crouching;
         }
         else
