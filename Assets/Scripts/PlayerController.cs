@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     private Animator anim;
 
-    private enum State {idle, running, jumping, falling};
+    private enum State {idle, running, jumping, falling, crouching};
     private State state = State.idle;
     private Collider2D coll;
     [SerializeField] private LayerMask ground;
@@ -77,7 +77,10 @@ public class PlayerController : MonoBehaviour
             //Moving
             state = State.running;
 
-        }else
+        }else if(Input.GetKey(KeyCode.DownArrow)){
+            state = State.crouching;
+        }
+        else
         {
             //Standing
             state = State.idle;
