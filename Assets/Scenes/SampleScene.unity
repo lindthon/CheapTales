@@ -39756,10 +39756,10 @@ GameObject:
   m_Component:
   - component: {fileID: 958349129}
   - component: {fileID: 958349128}
-  - component: {fileID: 958349127}
   - component: {fileID: 958349130}
   - component: {fileID: 958349132}
   - component: {fileID: 958349131}
+  - component: {fileID: 958349127}
   m_Layer: 0
   m_Name: Squits
   m_TagString: Untagged
