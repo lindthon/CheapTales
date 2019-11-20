@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private State state = State.idle;
     private Collider2D coll;
     [SerializeField] private LayerMask ground;
+
+    private AudioSource jumpSound;
     
 
     // Start is called before the first frame update
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
+        jumpSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,6 +50,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
+            jumps();
             state = State.jumping;
         }
 
@@ -86,4 +90,11 @@ public class PlayerController : MonoBehaviour
             state = State.idle;
         }
     }
+
+    private void jumps()
+    {
+        jumpSound.Play();
+    }
 }
+
+
